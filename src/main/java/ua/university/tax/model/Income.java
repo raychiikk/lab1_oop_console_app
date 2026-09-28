@@ -9,7 +9,7 @@ public abstract class Income {
 
     public Income(String description, double amount) {
         if (amount < 0) {
-            throw new IllegalArgumentException("Сума доходу не може бути від'ємною");
+            throw new IllegalArgumentException("Income amount cannot be negative");
         }
         this.description = description;
         this.amount = amount;
@@ -30,7 +30,7 @@ public abstract class Income {
 
     @Override
     public String toString() {
-        return String.format("%s: Дохід = %.2f, Податок = %.2f", 
+        return String.format("%s: Income = %.2f, Tax = %.2f", 
                 description, amount, calculateTax());
     }
 }
