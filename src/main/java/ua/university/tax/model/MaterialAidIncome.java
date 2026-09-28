@@ -1,7 +1,7 @@
 package ua.university.tax.model;
 
 /**
- * Матеріальна допомога (не оподатковується до певної суми).
+ * матеріальна допомога (не оподатковується до певної суми)
  */
 public class MaterialAidIncome extends Income {
     private static final double TAX_RATE = 0.18;

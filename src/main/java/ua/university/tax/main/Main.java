@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        // Ініціалізація даних 
+        // ініціалізація даних 
         List<Income> personIncomes = Arrays.asList(
             new EmploymentIncome("Primary Job", 150000, 2, 2000),
             new EmploymentIncome("Additional Job", 40000, 0, 0),

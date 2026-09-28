@@ -1,7 +1,7 @@
 package ua.university.tax.model;
 
 /**
- * Базовий абстрактний клас для будь-якого виду доходу.
+ * базовий абстрактний клас для будь-якого виду доходу
  */
 public abstract class Income {
     private String description;
@@ -24,7 +24,7 @@ public abstract class Income {
     }
 
     /**
-     * Поліморфний метод для розрахунку податку.
+     * поліморфний метод для розрахунку податку
      */
     public abstract double calculateTax();
 

@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class TaxCalculator {
 
     /**
-     * Повертає загальну суму податків для заданого списку доходів.
+     * повертає загальну суму податків для заданого списку доходів
      */
     public double calculateTotalTax(List<Income> incomes) {
         return incomes.stream()
@@ -17,7 +17,7 @@ public class TaxCalculator {
     }
 
     /**
-     * Сортує список доходів за сумою податку (від меншого до більшого).
+     * сортує список доходів за сумою податку (від меншого до більшого)
      */
     public List<Income> sortTaxesByAmount(List<Income> incomes) {
         return incomes.stream()

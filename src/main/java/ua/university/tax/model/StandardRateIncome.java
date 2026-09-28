@@ -1,7 +1,7 @@
 package ua.university.tax.model;
 
 /**
- * Дохід від продажу майна, авторських винагород, переказів тощо (фіксована ставка).
+ * дохід від продажу майна, авторських винагород, переказів тощо (фіксована ставка)
  */
 public class StandardRateIncome extends Income {
     private double taxRate;

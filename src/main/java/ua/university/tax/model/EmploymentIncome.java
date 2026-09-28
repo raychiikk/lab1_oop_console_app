@@ -1,7 +1,7 @@
 package ua.university.tax.model;
 
 /**
- * Дохід з основного або додаткового місця роботи з урахуванням пільг на дітей.
+ * дохід з основного або додаткового місця роботи з урахуванням пільг на дітей
  */
 public class EmploymentIncome extends Income {
     private static final double TAX_RATE = 0.18; // 18% податок
@@ -16,7 +16,7 @@ public class EmploymentIncome extends Income {
 
     @Override
     public double calculateTax() {
-        // Віднімаємо пільги на дітей від бази оподаткування
+        // віднімаємо пільги на дітей від бази оподаткування
         double taxableBase = getAmount() - (childrenCount * childBenefitAmount);
         if (taxableBase < 0) {
             taxableBase = 0;
