@@ -1,0 +1,8 @@
+Oleg;2
+EMPLOYMENT;Primary Job;150000;true
+EMPLOYMENT;Additional Job;40000;false
+STANDARD;Royalties;12000;0.05
+GIFT;Property Gift;300000;PROPERTY;0.05
+GIFT;Cash Gift;10000;CASH;0.05
+STANDARD;Foreign Transfer;50000;0.18
+AID;Financial Aid;5000;3000

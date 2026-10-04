@@ -4,23 +4,17 @@ package ua.university.tax.model;
  * дохід з основного або додаткового місця роботи з урахуванням пільг на дітей
  */
 public class EmploymentIncome extends Income {
-    private static final double TAX_RATE = 0.18; // 18% податок
-    private int childrenCount;
-    private double childBenefitAmount;
+    private int appliedChildrenBenefits;
 
-    public EmploymentIncome(String description, double amount, int childrenCount, double childBenefitAmount) {
+    public EmploymentIncome(String description, double amount, int appliedChildrenBenefits) {
         super(description, amount);
-        this.childrenCount = childrenCount;
-        this.childBenefitAmount = childBenefitAmount;
+        this.appliedChildrenBenefits = appliedChildrenBenefits;
     }
 
-    @Override
+@Override
     public double calculateTax() {
-        // віднімаємо пільги на дітей від бази оподаткування
-        double taxableBase = getAmount() - (childrenCount * childBenefitAmount);
-        if (taxableBase < 0) {
-            taxableBase = 0;
-        }
-        return taxableBase * TAX_RATE;
+              // віднімаємо пільги на дітей від бази оподаткування
+        double taxableBase = getAmount() - (appliedChildrenBenefits * TaxConstants.CHILD_BENEFIT_AMOUNT);
+        return Math.max(0, taxableBase) * TaxConstants.BASE_TAX_RATE;
     }
 }

@@ -1,5 +1,7 @@
 package ua.university.tax.model;
 
+import java.util.Locale;
+
 /**
  * базовий абстрактний клас для будь-якого виду доходу
  */
@@ -30,7 +32,6 @@ public abstract class Income {
 
     @Override
     public String toString() {
-        return String.format("%s: Income = %.2f, Tax = %.2f", 
-                description, amount, calculateTax());
+        return String.format(Locale.US, "%s: Income = %.2f, Tax = %.2f", description, amount, calculateTax());
     }
 }

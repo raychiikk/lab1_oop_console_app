@@ -1,27 +1,28 @@
 package ua.university.tax.service;
 
 import ua.university.tax.model.Income;
+import ua.university.tax.model.TaxDeclaration;
+import ua.university.tax.model.Taxpayer;
+
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class TaxCalculator {
 
-    /**
-     * повертає загальну суму податків для заданого списку доходів
-     */
-    public double calculateTotalTax(List<Income> incomes) {
-        return incomes.stream()
-                .mapToDouble(Income::calculateTax)
-                .sum();
-    }
+    public TaxDeclaration createDeclaration(Taxpayer taxpayer) {
+        List<Income> incomes = taxpayer.getIncomes();
+        
+        if (incomes == null || incomes.isEmpty()) {
+            return new TaxDeclaration(taxpayer, List.of(), 0.0);
+        }
 
-    /**
-     * сортує список доходів за сумою податку (від меншого до більшого)
-     */
-    public List<Income> sortTaxesByAmount(List<Income> incomes) {
-        return incomes.stream()
+        double totalTax = incomes.stream().mapToDouble(Income::calculateTax).sum();
+        
+        List<Income> sorted = incomes.stream()
                 .sorted(Comparator.comparingDouble(Income::calculateTax))
                 .collect(Collectors.toList());
+
+        return new TaxDeclaration(taxpayer, sorted, totalTax);
     }
 }
