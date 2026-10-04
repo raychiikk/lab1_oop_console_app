@@ -13,7 +13,7 @@ public class TaxCalculator {
     public TaxDeclaration createDeclaration(Taxpayer taxpayer) {
         List<Income> incomes = taxpayer.getIncomes();
         
-        if (incomes == null || incomes.isEmpty()) {
+        if (incomes.isEmpty()) {
             return new TaxDeclaration(taxpayer, List.of(), 0.0);
         }
 

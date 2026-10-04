@@ -1,21 +1,17 @@
 package ua.university.tax.model;
 
-public class GiftIncome extends Income {
-    private String giftType; // "cash" or "property"
-    private double taxRate;
+/**
+ * дохід, отриманий як подарунок (cash or property)
+ */
+public class GiftIncome extends StandardRateIncome {
+    private GiftType giftType;
 
-    public GiftIncome(String description, double amount, String giftType, double taxRate) {
-        super(description, amount);
+    public GiftIncome(String description, double amount, GiftType giftType, double taxRate) {
+        super(description, amount, taxRate);
         this.giftType = giftType;
-        this.taxRate = taxRate;
     }
 
-    public String getGiftType() {
+    public GiftType getGiftType() {
         return giftType;
-    }
-
-    @Override
-    public double calculateTax() {
-        return getAmount() * taxRate;
     }
 }

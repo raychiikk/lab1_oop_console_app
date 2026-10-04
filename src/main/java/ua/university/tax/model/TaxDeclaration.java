@@ -1,7 +1,11 @@
 package ua.university.tax.model;
 
+import java.util.Collections;
 import java.util.List;
 
+/**
+ * Represents a final tax declaration containing sorted incomes and total tax.
+ */
 public class TaxDeclaration {
     private Taxpayer taxpayer;
     private List<Income> sortedIncomes;
@@ -13,24 +17,15 @@ public class TaxDeclaration {
         this.totalTax = totalTax;
     }
 
+    public Taxpayer getTaxpayer() {
+        return taxpayer;
+    }
+
     public double getTotalTax() {
         return totalTax;
     }
 
     public List<Income> getSortedIncomes() {
-        return sortedIncomes;
-    }
-
-    public void printDeclaration() {
-        System.out.println("=== Tax Declaration ===");
-        System.out.println("Taxpayer: " + taxpayer.getName());
-        System.out.println("Children count: " + taxpayer.getChildrenCount());
-        System.out.println("-----------------------");
-        for (Income income : sortedIncomes) {
-            System.out.println(income);
-        }
-        System.out.println("-----------------------");
-        System.out.printf("Total tax to pay: %.2f UAH\n", totalTax);
-        System.out.println("=======================");
+        return Collections.unmodifiableList(sortedIncomes);
     }
 }
