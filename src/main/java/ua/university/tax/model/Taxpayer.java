@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Represents a taxpayer physical person.
+ * представляє інтереси платника податків - фізичної особи
  */
 public class Taxpayer {
     private String name;
@@ -23,7 +23,7 @@ public class Taxpayer {
     }
 
     /**
-     * Adds employment income and applies benefits only for the first primary job.
+     * додає дохід від зайнятості та застосовує пільги лише щодо першого основного місця роботи
      */
     public void addEmploymentIncome(String description, double amount, boolean isPrimary) {
         int benefits = 0;

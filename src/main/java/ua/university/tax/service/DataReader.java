@@ -9,7 +9,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
- * Service for reading taxpayer data from a CSV file.
+ * сервіс для зчитування даних платників податків із CSV-файлу
  */
 public class DataReader {
 

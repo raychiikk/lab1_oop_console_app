@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Represents a final tax declaration containing sorted incomes and total tax.
+ * представляє остаточну податкову декларацію, що містить розподілені за категоріями доходи та загальну суму податку
  */
 public class TaxDeclaration {
     private Taxpayer taxpayer;
